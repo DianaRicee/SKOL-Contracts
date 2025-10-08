@@ -6,4 +6,9 @@ optimizer = true
 optimizer-runs = 250
 via-ir = true
 
+remappings = [
+    "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+    "@foundry-rs/=lib/foundry-rs/"
+]
+
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
