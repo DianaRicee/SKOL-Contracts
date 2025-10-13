@@ -1,8 +1,10 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-  webpack: (config) => {
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
+  webpack: config => {
     config.externals.push('pino-pretty', 'lokijs', 'encoding');
+    
+    // Add fallbacks for Node.js modules
     config.resolve.fallback = {
       ...config.resolve.fallback,
       fs: false,
@@ -19,12 +21,7 @@ const nextConfig = {
     };
     
     return config;
-  },
-  // Suppress warnings about missing modules
-  onDemandEntries: {
-    maxInactiveAge: 25 * 1000,
-    pagesBufferLength: 2,
-  },
+  }
 };
 
-module.exports = nextConfig;
+export default nextConfig;
