@@ -13,7 +13,7 @@ const queryClient = new QueryClient()
 const metadata = {
   name: 'SKOL-Contracts',
   description: 'Building SKOL Contracts',
-  url: 'https://github.com/0xonerb/next-reown-appkit-ssr', // origin must match your domain & subdomain
+  url: 'https://skol-contracts.vercel.app', // origin must match your domain & subdomain
   icons: ['https://avatars.githubusercontent.com/u/179229932']
 }
 
