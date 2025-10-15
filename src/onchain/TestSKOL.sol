@@ -19,4 +19,8 @@ contract TestSKOL {
         uint256 totalRatings;
         bool isRegistered;
     }
+
+    // State variables
+    mapping(address => ReputationData) private _reputations;
+    address[] private _registeredUsers;
 }
