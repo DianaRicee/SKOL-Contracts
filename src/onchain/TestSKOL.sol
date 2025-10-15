@@ -23,4 +23,9 @@ contract TestSKOL {
     // State variables
     mapping(address => ReputationData) private _reputations;
     address[] private _registeredUsers;
+
+    // Events
+    event UserRegistered(address indexed user, uint256 initialReputation);
+    event ReputationUpdated(address indexed user, uint256 oldScore, uint256 newScore, address indexed rater);
+
 }
