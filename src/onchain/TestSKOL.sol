@@ -28,7 +28,7 @@ contract TestSKOL {
     event UserRegistered(address indexed user, uint256 initialReputation);
     event ReputationUpdated(address indexed user, uint256 oldScore, uint256 newScore, address indexed rater);
 
-/**
+    /**
      * @dev Register a new user (anyone can call)
      * @param user Address of the user to register
      */
