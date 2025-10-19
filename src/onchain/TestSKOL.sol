@@ -43,7 +43,7 @@ contract TestSKOL {
         emit UserRegistered(user, INITIAL_REPUTATION);
     }
 
-        /**
+    /**
      * @dev Register yourself
      */
     function registerSelf() public {
@@ -88,5 +88,4 @@ contract TestSKOL {
     function givePositiveRating(address user) external {
         updateReputation(user, 800);
     }
-
 }
