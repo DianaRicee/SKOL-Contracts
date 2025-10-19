@@ -42,4 +42,11 @@ contract TestSKOL {
 
         emit UserRegistered(user, INITIAL_REPUTATION);
     }
+
+        /**
+     * @dev Register yourself
+     */
+    function registerSelf() public {
+        registerUser(msg.sender);
+    }
 }
