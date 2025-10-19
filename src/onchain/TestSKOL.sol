@@ -81,6 +81,10 @@ contract TestSKOL {
         emit ReputationUpdated(user, oldScore, userData.score, msg.sender);
     }
 
+    /**
+     * @dev Give a positive rating (800 points)
+     * @param user Address of the user being rated
+     */
     function givePositiveRating(address user) external {
         updateReputation(user, 800);
     }
