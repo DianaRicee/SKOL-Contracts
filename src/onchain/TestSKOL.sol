@@ -49,4 +49,30 @@ contract TestSKOL {
     function registerSelf() public {
         registerUser(msg.sender);
     }
+
+    function updateReputation(address user, uint256 rating) public {
+        // Auto-register if not registered
+        if (!_reputations[user].isRegistered) {
+            registerUser(user);
+        }
+
+        // Auto-register rater if not registered
+        if (!_reputations[msg.sender].isRegistered) {
+            registerUser(msg.sender);
+        }
+
+        // Clamp rating to valid range
+        if (rating > MAX_REPUTATION) {
+            rating = MAX_REPUTATION;
+        }
+
+        ReputationData storage userData = _reputations[user];
+        uint256 oldScore = userData.score;
+
+        // Simple average calculation
+        userData.totalRatings += 1;
+        userData.score = ((userData.score * (userData.totalRatings - 1)) + rating) / userData.totalRatings;
+
+        emit ReputationUpdated(user, oldScore, userData.score, msg.sender);
+    }
 }
