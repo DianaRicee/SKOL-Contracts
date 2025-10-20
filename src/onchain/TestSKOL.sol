@@ -101,7 +101,7 @@ contract TestSKOL {
      * @dev Give a neutral rating (500 points)
      * @param user Address of the user being rated
      */
-        function giveNeutralRating(address user) external {
+    function giveNeutralRating(address user) external {
         updateReputation(user, 500);
     }
 }
