@@ -88,4 +88,8 @@ contract TestSKOL {
     function givePositiveRating(address user) external {
         updateReputation(user, 800);
     }
+
+    function giveNegativeRating(address user) external {
+        updateReputation(user, 200);
+    }
 }
