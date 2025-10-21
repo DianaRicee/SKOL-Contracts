@@ -124,4 +124,11 @@ contract TestSKOL {
 
         emit ReputationUpdated(user, oldScore, score, msg.sender);
     }
+
+        function getReputation(address user) external view returns (uint256) {
+        if (!_reputations[user].isRegistered) {
+            return INITIAL_REPUTATION; // Return default instead of reverting
+        }
+        return _reputations[user].score;
+    }
 }
