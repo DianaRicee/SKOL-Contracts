@@ -125,6 +125,11 @@ contract TestSKOL {
         emit ReputationUpdated(user, oldScore, score, msg.sender);
     }
 
+    /**
+     * @dev Get a user's current reputation score
+     * @param user Address of the user
+     * @return Current reputation score
+     */
         function getReputation(address user) external view returns (uint256) {
         if (!_reputations[user].isRegistered) {
             return INITIAL_REPUTATION; // Return default instead of reverting
