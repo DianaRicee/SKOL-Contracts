@@ -142,7 +142,7 @@ contract TestSKOL {
      * @param user Address of the user
      * @return ReputationData struct with all reputation information
      */
-        function getReputationData(address user) external view returns (ReputationData memory) {
+    function getReputationData(address user) external view returns (ReputationData memory) {
         if (!_reputations[user].isRegistered) {
             return ReputationData({score: INITIAL_REPUTATION, totalRatings: 0, isRegistered: false});
         }
@@ -162,7 +162,7 @@ contract TestSKOL {
      * @dev Get all registered users
      * @return users Array of user addresses
      */
-        function getAllRegisteredUsers() external view returns (address[] memory) {
+    function getAllRegisteredUsers() external view returns (address[] memory) {
         return _registeredUsers;
     }
 }
