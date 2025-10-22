@@ -149,6 +149,11 @@ contract TestSKOL {
         return _reputations[user];
     }
 
+    /**
+     * @dev Check if user is registered
+     * @param user Address of the user
+     * @return Whether user is registered
+     */
     function isRegistered(address user) external view returns (bool) {
         return _reputations[user].isRegistered;
     }
