@@ -157,4 +157,8 @@ contract TestSKOL {
     function isRegistered(address user) external view returns (bool) {
         return _reputations[user].isRegistered;
     }
+
+        function getAllRegisteredUsers() external view returns (address[] memory) {
+        return _registeredUsers;
+    }
 }
