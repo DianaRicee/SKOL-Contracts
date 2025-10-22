@@ -158,6 +158,10 @@ contract TestSKOL {
         return _reputations[user].isRegistered;
     }
 
+    /**
+     * @dev Get all registered users
+     * @return users Array of user addresses
+     */
         function getAllRegisteredUsers() external view returns (address[] memory) {
         return _registeredUsers;
     }
