@@ -136,4 +136,33 @@ contract TestSKOL {
         }
         return _reputations[user].score;
     }
+
+    /**
+     * @dev Get detailed reputation data for a user
+     * @param user Address of the user
+     * @return ReputationData struct with all reputation information
+     */
+    function getReputationData(address user) external view returns (ReputationData memory) {
+        if (!_reputations[user].isRegistered) {
+            return ReputationData({score: INITIAL_REPUTATION, totalRatings: 0, isRegistered: false});
+        }
+        return _reputations[user];
+    }
+
+    /**
+     * @dev Check if user is registered
+     * @param user Address of the user
+     * @return Whether user is registered
+     */
+    function isRegistered(address user) external view returns (bool) {
+        return _reputations[user].isRegistered;
+    }
+
+    /**
+     * @dev Get all registered users
+     * @return users Array of user addresses
+     */
+    function getAllRegisteredUsers() external view returns (address[] memory) {
+        return _registeredUsers;
+    }
 }
