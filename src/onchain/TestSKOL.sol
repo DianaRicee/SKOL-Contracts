@@ -170,7 +170,7 @@ contract TestSKOL {
      * @dev Get total number of registered users
      * @return Total user count
      */
-        function getTotalUsers() external view returns (uint256) {
+    function getTotalUsers() external view returns (uint256) {
         return _registeredUsers.length;
     }
 
@@ -178,7 +178,7 @@ contract TestSKOL {
      * @dev Batch register multiple users
      * @param users Array of user addresses to register
      */
-        function batchRegisterUsers(address[] calldata users) external {
+    function batchRegisterUsers(address[] calldata users) external {
         for (uint256 i = 0; i < users.length; i++) {
             registerUser(users[i]);
         }
