@@ -174,6 +174,10 @@ contract TestSKOL {
         return _registeredUsers.length;
     }
 
+    /**
+     * @dev Batch register multiple users
+     * @param users Array of user addresses to register
+     */
         function batchRegisterUsers(address[] calldata users) external {
         for (uint256 i = 0; i < users.length; i++) {
             registerUser(users[i]);
