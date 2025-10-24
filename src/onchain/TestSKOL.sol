@@ -173,4 +173,10 @@ contract TestSKOL {
         function getTotalUsers() external view returns (uint256) {
         return _registeredUsers.length;
     }
+
+        function batchRegisterUsers(address[] calldata users) external {
+        for (uint256 i = 0; i < users.length; i++) {
+            registerUser(users[i]);
+        }
+    }
 }
