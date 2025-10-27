@@ -183,4 +183,32 @@ contract TestSKOL {
             registerUser(users[i]);
         }
     }
+
+    /**
+     * @dev Get reputation scores for multiple users
+     * @param users Array of user addresses
+     * @return scores Array of reputation scores
+     */
+    function getBatchReputations(address[] calldata users) external view returns (uint256[] memory scores) {
+        scores = new uint256[](users.length);
+        for (uint256 i = 0; i < users.length; i++) {
+            scores[i] = _reputations[users[i]].isRegistered ? _reputations[users[i]].score : INITIAL_REPUTATION;
+        }
+    }
+
+    /**
+     * @dev Reset a user's reputation to initial value
+     * @param user Address of the user
+     */
+        function resetReputation(address user) external {
+        if (!_reputations[user].isRegistered) {
+            registerUser(user);
+        } else {
+            uint256 oldScore = _reputations[user].score;
+            _reputations[user].score = INITIAL_REPUTATION;
+            _reputations[user].totalRatings = 0;
+
+            emit ReputationUpdated(user, oldScore, INITIAL_REPUTATION, msg.sender);
+        }
+    }
 }
