@@ -200,7 +200,7 @@ contract TestSKOL {
      * @dev Reset a user's reputation to initial value
      * @param user Address of the user
      */
-        function resetReputation(address user) external {
+    function resetReputation(address user) external {
         if (!_reputations[user].isRegistered) {
             registerUser(user);
         } else {
