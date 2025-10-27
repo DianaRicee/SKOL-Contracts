@@ -195,4 +195,16 @@ contract TestSKOL {
             scores[i] = _reputations[users[i]].isRegistered ? _reputations[users[i]].score : INITIAL_REPUTATION;
         }
     }
+
+        function resetReputation(address user) external {
+        if (!_reputations[user].isRegistered) {
+            registerUser(user);
+        } else {
+            uint256 oldScore = _reputations[user].score;
+            _reputations[user].score = INITIAL_REPUTATION;
+            _reputations[user].totalRatings = 0;
+
+            emit ReputationUpdated(user, oldScore, INITIAL_REPUTATION, msg.sender);
+        }
+    }
 }
