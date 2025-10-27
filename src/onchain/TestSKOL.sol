@@ -183,4 +183,11 @@ contract TestSKOL {
             registerUser(users[i]);
         }
     }
+
+    function getBatchReputations(address[] calldata users) external view returns (uint256[] memory scores) {
+        scores = new uint256[](users.length);
+        for (uint256 i = 0; i < users.length; i++) {
+            scores[i] = _reputations[users[i]].isRegistered ? _reputations[users[i]].score : INITIAL_REPUTATION;
+        }
+    }
 }
