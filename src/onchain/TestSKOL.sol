@@ -184,6 +184,11 @@ contract TestSKOL {
         }
     }
 
+    /**
+     * @dev Get reputation scores for multiple users
+     * @param users Array of user addresses
+     * @return scores Array of reputation scores
+     */
     function getBatchReputations(address[] calldata users) external view returns (uint256[] memory scores) {
         scores = new uint256[](users.length);
         for (uint256 i = 0; i < users.length; i++) {
