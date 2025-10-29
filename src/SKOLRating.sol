@@ -32,4 +32,14 @@ contract SKOLRating {
     uint256 public constant MAX_RATING = 1000;
     uint256 public constant DEFAULT_COOLDOWN = 24 hours;
     uint256 public constant MAX_RATINGS_PER_PAIR = 5; // Max ratings between same users
+
+    // Enums
+    enum RatingCategory {
+        OVERALL,
+        COMMUNICATION,
+        RELIABILITY,
+        QUALITY,
+        TIMELINESS
+    }
+
 }
