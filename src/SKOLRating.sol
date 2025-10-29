@@ -27,7 +27,7 @@ interface ISKOLRegistry {
  * @notice This contract manages the rating process and enforces business rules
  */
 contract SKOLRating {
-        // Constants
+    // Constants
     uint256 public constant MIN_RATING = 1;
     uint256 public constant MAX_RATING = 1000;
     uint256 public constant DEFAULT_COOLDOWN = 24 hours;
@@ -50,7 +50,7 @@ contract SKOLRating {
         OTHER
     }
 
-        // Structs
+    // Structs
     struct Rating {
         address rater; // Address of user giving the rating
         address ratee; // Address of user being rated
