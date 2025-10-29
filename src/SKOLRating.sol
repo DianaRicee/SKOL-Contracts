@@ -42,4 +42,11 @@ contract SKOLRating {
         TIMELINESS
     }
 
+    enum RatingContext {
+        GENERAL,
+        TRANSACTION,
+        SERVICE,
+        COLLABORATION,
+        OTHER
+    }
 }
