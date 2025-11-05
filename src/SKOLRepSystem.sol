@@ -10,6 +10,5 @@ import {ReentrancyGuard} from "@openzeppelin/contracts/utils/ReentrancyGuard.sol
  * @notice This contract stores and calculates reputation scores with anti-gaming mechanisms
  */
 contract SKOLRepSystem is Ownable, ReentrancyGuard {
-        constructor(address _owner) Ownable(_owner) {}
-
+    constructor(address _owner) Ownable(_owner) {}
 }
