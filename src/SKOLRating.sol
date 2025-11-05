@@ -62,4 +62,19 @@ contract SKOLRating {
         bool isActive; // Whether rating is still valid
         uint256 blockNumber; // Block number for verification
     }
+
+    struct UserRatingStats {
+        uint256 totalRatingsGiven;
+        uint256 totalRatingsReceived;
+        uint256 averageGiven;
+        uint256 averageReceived;
+        uint256 lastRatingTime;
+    }
+
+    struct RatingLimits {
+        uint256 cooldownPeriod; // Time between ratings of same user
+        uint256 maxRatingsPerDay; // Max ratings a user can give per day
+        uint256 minReputationToRate; // Minimum reputation required to rate
+        bool requireMinReputation; // Whether to enforce min reputation
+    }
 }
