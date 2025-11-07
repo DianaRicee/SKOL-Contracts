@@ -1,0 +1,21 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.19;
+
+import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
+import {ReentrancyGuard} from "@openzeppelin/contracts/utils/ReentrancyGuard.sol";
+
+/**
+ * @title SKOLRepSystem
+ * @dev Core contract for managing decentralized reputation scores
+ * @notice This contract stores and calculates reputation scores with anti-gaming mechanisms
+ */
+contract SKOLRepSystem is Ownable, ReentrancyGuard {
+    // Constants for reputation calculations
+    uint256 public constant MAX_REPUTATION = 1000;
+    uint256 public constant MIN_REPUTATION = 0;
+    uint256 public constant INITIAL_REPUTATION = 500;
+    uint256 public constant REPUTATION_DECAY_RATE = 1; // 0.1% per decay period
+    uint256 public constant DECAY_PERIOD = 30 days;
+
+    constructor(address _owner) Ownable(_owner) {}
+}
