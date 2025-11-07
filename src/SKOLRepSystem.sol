@@ -10,5 +10,13 @@ import {ReentrancyGuard} from "@openzeppelin/contracts/utils/ReentrancyGuard.sol
  * @notice This contract stores and calculates reputation scores with anti-gaming mechanisms
  */
 contract SKOLRepSystem is Ownable, ReentrancyGuard {
+        // Constants for reputation calculations
+    uint256 public constant MAX_REPUTATION = 1000;
+    uint256 public constant MIN_REPUTATION = 0;
+    uint256 public constant INITIAL_REPUTATION = 500;
+    uint256 public constant REPUTATION_DECAY_RATE = 1; // 0.1% per decay period
+    uint256 public constant DECAY_PERIOD = 30 days;
+
+
     constructor(address _owner) Ownable(_owner) {}
 }
