@@ -17,5 +17,20 @@ contract SKOLRepSystem is Ownable, ReentrancyGuard {
     uint256 public constant REPUTATION_DECAY_RATE = 1; // 0.1% per decay period
     uint256 public constant DECAY_PERIOD = 30 days;
 
+    // Structs
+    struct ReputationData {
+        uint256 score; // Current reputation score (0-1000)
+        uint256 totalRatings; // Total number of ratings received
+        uint256 totalScore; // Sum of all ratings (for average calculation)
+        uint256 lastUpdateTime; // Timestamp of last reputation update
+        uint256 lastDecayTime; // Timestamp of last decay application
+        bool isRegistered; // Whether user is registered in the system
+    }
+
+    struct RatingWeight {
+        uint256 raterReputation; // Reputation of the person giving the rating
+        uint256 weight; // Calculated weight for this rating
+    }
+
     constructor(address _owner) Ownable(_owner) {}
 }
