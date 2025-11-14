@@ -42,6 +42,5 @@ contract SKOLRepSystem is Ownable, ReentrancyGuard {
     uint256 public maxWeightMultiplier = 200; // Max weight multiplier (2x)
     bool public decayEnabled = true;
 
-
     constructor(address _owner) Ownable(_owner) {}
 }
