@@ -32,5 +32,10 @@ contract SKOLRepSystem is Ownable, ReentrancyGuard {
         uint256 weight; // Calculated weight for this rating
     }
 
+    // State variables
+    mapping(address => ReputationData) private _reputations;
+    mapping(address => bool) public authorizedRaters;
+    address[] private _registeredUsers;
+
     constructor(address _owner) Ownable(_owner) {}
 }
